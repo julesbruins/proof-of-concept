@@ -51,7 +51,7 @@ Teken zo nodig een sitemap. Bedenk welke Url's de pagina's krijgen, met bijhoren
 
 ## User Generated Content
 
-Om ervoor te zorgen dat jouw gebruikers iets kunnen achterlaten of toevoegen op jouw website heb je een POST interactie nodig. Volgens het principe van Progressive enhancement ontwerpt en bouwt je eerst de POST interactie Server-side. 
+Om ervoor te zorgen dat jouw gebruikers iets kunnen achterlaten of toevoegen op jouw website heb je een POST interactie nodig. Volgens het principe van Progressive enhancement ontwerp en bouw je eerst de POST interactie Server-side. 
 
 Schets een Wireflow van jouw interactie. Bedenk nette URLs voor je pagina's en routes, en schrijf deze erbij. Annoteer je Wireflow met hints voor je dynamische data, en bedenk ook hoe je de POST in het server.js script verwerkt. Onderzoek HTML-formulier-elementen die je kan gebruiken, en maak een breakdown voor de CSS en de HTML en noteer de bronnen.
 
