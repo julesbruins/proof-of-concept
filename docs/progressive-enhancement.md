@@ -28,12 +28,13 @@ Bespreek je planning en aanpak met een docent.
 Stundenten komen langs bij Krijn, Sanne, Dorien en Koop:
 
 Hoe ging de sprint review, wat is de opdracht/ontgwerpvraag/design challenge?
-> studentenm niet te veel laten hangen, maar vragen wat zij zelf gaan doen aan de “problemen”
+> studenten niet te veel laten hangen, maar vragen wat zij zelf gaan doen aan de “problemen”
 
 Planning bespreken adhv projectboard
 > Vragen naar wat ze willen opleveren (onderdeel van de debrief)
 
-Aanpak project opzetten volgens PE principes bespreken> doen ze de worshop van vandaag?
+Aanpak project opzetten volgens PE principes bespreken
+> doen ze de worshop van vandaag?
 > Hebben ze hulp nodig voor het schetsen van de User generated content? Zelf proberen of samen schetsen? 
 -->
 
