@@ -1,0 +1,17 @@
+<header>
+    <h1>Welcome back, {{ roles.displayName | split: " " | first }}</h1>
+    <p>Role: {{ roles.roleName }} at {{ roles.companyName }}</p>
+    <p>{{ roles.unreadNotificationsCount }} unread messages</p>
+</header>
+
+<main>
+    <h2>{{ roles.dashboardTitle }}</h2>
+
+    {% for item in roleSpecificData %}
+        <p>{{ item.currentMaintenanceSchedules }}</p>
+    {% endfor %}
+    
+    <h2>Perspective</h2>
+    <p>{{ roles.companyPerspectiveHtml }}</p>
+
+</main>
