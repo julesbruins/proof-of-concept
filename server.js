@@ -23,14 +23,11 @@ app.get('/:role', async function (request, response) {
     const dynamicRole = await fetch(`https://fdnd-fresk-api.netlify.app/get-content-by-role?userRole=${role}`)
     const dynamicRoleJSON = await dynamicRole.json()
 
-    response.render('roles.liquid', {
+    response.render('dashboard.liquid', {
       roles: dynamicRoleJSON.commonData,
-      roleSpecificData: dynamicRoleJSON.roleSpecificData
+      roleSpecificData: dynamicRoleJSON.roleSpecificData,
     })
 })
-
-
-  
 
 
 app.set('port', process.env.PORT || 8000)

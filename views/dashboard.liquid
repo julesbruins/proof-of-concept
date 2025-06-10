@@ -1,0 +1,70 @@
+{% render 'partials/head.liquid' %}
+
+{% render 'partials/overview.liquid', roles: roles, roleSpecificData: roleSpecificData, translations: translations %}
+
+<main>
+    <h2>{{ roles.dashboardTitle }}</h2>
+    {% if roles.roleName == 'Mechanic' %}
+    <ul>
+        <li><a href="/">Maintenance schedule</a></li>
+        <li><a href="/">Assigned repair jobs</a></li>
+        <li><a href="/">System diagnostic data</a></li>
+        <li><a href="/">Technical manuals links</a></li>
+    </ul>
+{% elsif roles.roleName == 'Boss' %}
+    <ul>
+        <li><a href="/">Key performance indicators</a></li>
+        <li><a href="/">Financial Summary</a></li>
+        <li><a href="/">Research & development projects</a></li>
+        <li><a href="/">Strategic goals</a></li>
+    </ul>
+{% elsif roles.roleName == 'Orderer' %}
+    <ul>
+        <li><a href="/">Low inventory alerts</a></li>
+        <li><a href="/">Supplier List</a></li>
+        <li><a href="/">Active purchase orders</a></li>
+    </ul>
+{% elsif roles.roleName == 'Controller' %}
+    <ul>
+        <li><a href="/">Active project timelines E</a></li>
+        <li><a href="/">Project budget</a></li>
+        <li><a href="/">Resource allocation overview G</a></li>
+        <li><a href="/">Effeciency metrics</a></li>
+    </ul>
+{% elsif roles.roleName == 'Salesman' %}
+    <ul>
+        <li><a href="/">Product catalogus</a></li>
+        <li><a href="/">Current sales leads</a></li>
+        <li><a href="/">Sales targets</a></li>
+        <li><a href="/">commision Structure</a></li>
+    </ul>
+{% elsif roles.roleName == 'Grower' %}
+    <ul>
+        <li><a href="/">Active crop cycles</a></li>
+        <li><a href="/">Environmental alerts</a></li>
+        <li><a href="/">Upcoming tasks</a></li>
+        <li><a href="/">Quick links</a></li>
+    </ul>
+{% endif %}
+
+    {% comment %} <ul>
+        <li><a href="">Key: currentMaintenanceSchedules </a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </ul> {% endcomment %}
+    {% comment %} {{ roleSpecificData | json }} {% endcomment %}
+
+{% comment %} {% for item in roleSpecificData %} 
+Key: currentMaintenanceSchedules 
+Key: assignedRepairJobs 
+Key: systemDiagnosticData 
+Key: technicalManualsLinks
+{% endfor %} {% endcomment %}
+    
+    <h2>Perspective</h2>
+    <p>{{ roles.companyPerspectiveHtml }}</p>
+
+</main>
+
+{% render 'partials/foot.liquid' %}
