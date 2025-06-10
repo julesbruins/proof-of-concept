@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/styles/overview.css">
+
+<header>
+    <h1 class="md">Welcome back, {{ roles.displayName | split: " " | first }} 👋</h1>
+    
+    <div class="flex-header">
+        <p>Role: {{ roles.roleName }} at {{ roles.companyName }}</p>
+        <p class="messages-count">{{ roles.unreadNotificationsCount }} unread messages</p>
+    </div>
+</header>
+

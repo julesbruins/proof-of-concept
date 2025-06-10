@@ -1,69 +1,194 @@
 {% render 'partials/head.liquid' %}
 
-{% render 'partials/overview.liquid', roles: roles, roleSpecificData: roleSpecificData, translations: translations %}
+{% render 'partials/header.liquid', roles: roles, roleSpecificData: roleSpecificData, translations: translations %}
 
 <main>
-    <h2>{{ roles.dashboardTitle }}</h2>
-    {% if roles.roleName == 'Mechanic' %}
-    <ul>
-        <li><a href="/">Maintenance schedule</a></li>
-        <li><a href="/">Assigned repair jobs</a></li>
-        <li><a href="/">System diagnostic data</a></li>
-        <li><a href="/">Technical manuals links</a></li>
-    </ul>
-{% elsif roles.roleName == 'Boss' %}
-    <ul>
-        <li><a href="/">Key performance indicators</a></li>
-        <li><a href="/">Financial Summary</a></li>
-        <li><a href="/">Research & development projects</a></li>
-        <li><a href="/">Strategic goals</a></li>
-    </ul>
-{% elsif roles.roleName == 'Orderer' %}
-    <ul>
-        <li><a href="/">Low inventory alerts</a></li>
-        <li><a href="/">Supplier List</a></li>
-        <li><a href="/">Active purchase orders</a></li>
-    </ul>
-{% elsif roles.roleName == 'Controller' %}
-    <ul>
-        <li><a href="/">Active project timelines E</a></li>
-        <li><a href="/">Project budget</a></li>
-        <li><a href="/">Resource allocation overview G</a></li>
-        <li><a href="/">Effeciency metrics</a></li>
-    </ul>
-{% elsif roles.roleName == 'Salesman' %}
-    <ul>
-        <li><a href="/">Product catalogus</a></li>
-        <li><a href="/">Current sales leads</a></li>
-        <li><a href="/">Sales targets</a></li>
-        <li><a href="/">commision Structure</a></li>
-    </ul>
-{% elsif roles.roleName == 'Grower' %}
-    <ul>
-        <li><a href="/">Active crop cycles</a></li>
-        <li><a href="/">Environmental alerts</a></li>
-        <li><a href="/">Upcoming tasks</a></li>
-        <li><a href="/">Quick links</a></li>
-    </ul>
-{% endif %}
+    <section class="dashboard">
+        <h2 class="md">{{ roles.dashboardTitle }}</h2>
+            {% if roles.roleName == 'Mechanic' %}
+                <ul>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/maintenance.liquid' %}
+                         Maintenance schedule
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/repair.liquid' %}
+                        Assigned repair jobs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/system-diagnostic.liquid' %}
+                        System diagnostic data
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/manual.liquid' %}
+                        Technical manuals links
+                        </a>
+                    </li>
+                </ul>
 
-    {% comment %} <ul>
-        <li><a href="">Key: currentMaintenanceSchedules </a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-    </ul> {% endcomment %}
-    {% comment %} {{ roleSpecificData | json }} {% endcomment %}
 
-{% comment %} {% for item in roleSpecificData %} 
-Key: currentMaintenanceSchedules 
-Key: assignedRepairJobs 
-Key: systemDiagnosticData 
-Key: technicalManualsLinks
-{% endfor %} {% endcomment %}
-    
-    <h2>Perspective</h2>
-    <p>{{ roles.companyPerspectiveHtml }}</p>
+            {% elsif roles.roleName == 'Boss' %}
+                <ul>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/performance.liquid' %}
+                        Key performance indicators
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/financial.liquid' %}
+                        Financial Summary
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/development.liquid' %}
+                        Research & development projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/strategy.liquid' %}
+                        Strategic goals
+                        </a>
+                    </li>
+                </ul>
+
+            {% elsif roles.roleName == 'Orderer' %}
+                <ul>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/inventory.liquid' %}
+                        Low inventory alerts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/strategy.liquid' %}
+                        Supplier List
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/performance.liquid' %}
+                        Active purchase orders
+                        </a>
+                    </li>
+                </ul>
+
+            {% elsif roles.roleName == 'Controller' %}
+                <ul>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/timeline.liquid' %} 
+                        Active project timelines
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/performance.liquid' %}
+                        Project budget
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/inventory.liquid' %} 
+                        Resource allocation overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/metrics.liquid' %}
+                        Effeciency metrics
+                        </a>
+                    </li>
+                </ul>
+
+            {% elsif roles.roleName == 'Salesman' %}
+                <ul>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/shop.liquid' %}                        
+                        Product catalogus
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/financial.liquid' %}
+                        Current sales leads
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/performance.liquid' %}
+                        Sales targets
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/percentage.liquid' %}
+                        Commission Structure
+                        </a>
+                    </li>
+                </ul>
+        
+            {% elsif roles.roleName == 'Grower' %}
+                <ul>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/cycle.liquid' %}
+                        Active crop cycles
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/alert.liquid' %}
+                        Environmental alerts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/tasks.liquid' %}
+                        Upcoming tasks
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                        {% render './partials/icons/links.liquid' %}
+                        Quick links
+                        </a>
+                    </li>
+                </ul>
+            {% endif %}
+    </section>
+
+        {% comment %} <ul>
+            <li><a href="">Key: currentMaintenanceSchedules </a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul> {% endcomment %}
+        {% comment %} {{ roleSpecificData | json }} {% endcomment %}
+
+    {% comment %} {% for item in roleSpecificData %} 
+    Key: currentMaintenanceSchedules 
+    Key: assignedRepairJobs 
+    Key: systemDiagnosticData 
+    Key: technicalManualsLinks
+    {% endfor %} {% endcomment %}
+
+    <section class="perspective">
+        <h2 class="md">My perspective as {{ roles.roleName }}</h2>
+        <p>{{ roles.companyPerspectiveHtml }}</p>
+    </section>
 
 </main>
 
