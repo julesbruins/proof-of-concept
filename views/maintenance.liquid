@@ -1,0 +1,45 @@
+{% render 'partials/head.liquid' %}
+
+<header class="maintenance-tasks">
+    <a href="/mechanic">
+        <picture>
+            <source type="image/avif" src="/assets/logo-citysprout.avif">
+            <source type="image/webp" src="/assets/logo-citysprout.webp">
+            <img src="/assets/logo-citysprout.png" alt="logo citysprout">
+        </picture>
+    </a>
+    
+
+    <h1 class="md">Upcoming maintenance tasks</h1>
+
+</header>
+
+<section class="maintenance-tasks">
+    <article>
+        <h2 class="md">{{ mechanic.currentMaintenanceSchedules[0].systemId }}</h2>
+        <p>Task: {{ mechanic.currentMaintenanceSchedules[0].task }}</p>
+        <div class="flex-inside">
+            <p class="date">Due date: {{ mechanic.currentMaintenanceSchedules[0].dueDate }}</p>
+            <p class="status green">{{ mechanic.currentMaintenanceSchedules[0].status }}</p>
+        </div>
+    </article>
+
+    <article>
+        <h2 class="md">{{ mechanic.currentMaintenanceSchedules[1].systemId }}</h2>
+        <p><span class="bold">Task:</span> {{ mechanic.currentMaintenanceSchedules[1].task }}</p>
+        <div class="flex-inside">
+            <p><span class="bold">Due date:</span> {{ mechanic.currentMaintenanceSchedules[1].dueDate }}</p>
+            <p class="status yellow">{{ mechanic.currentMaintenanceSchedules[1].status }}</p>
+        </div>
+    </article>
+
+    <article>
+        <h2 class="md">{{ mechanic.currentMaintenanceSchedules[2].systemId }}</h2>
+        <p>Task: {{ mechanic.currentMaintenanceSchedules[2].task }}</p>
+        <div class="flex-inside">
+            <p>Due date: {{ mechanic.currentMaintenanceSchedules[2].dueDate }}</p>
+            <p class="status green">{{ mechanic.currentMaintenanceSchedules[2].status }}</p>
+        </div>
+    </article>
+
+</section>

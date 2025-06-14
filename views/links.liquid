@@ -1,0 +1,26 @@
+{% render 'partials/head.liquid' %}
+
+<header class="links">
+    <a href="/mechanic">
+        <picture>
+            <source type="image/avif" src="/assets/logo-citysprout.avif">
+            <source type="image/webp" src="/assets/logo-citysprout.webp">
+            <img src="/assets/logo-citysprout.png" alt="logo citysprout">
+        </picture>
+    </a>
+
+    <h1></h1>
+</header>
+
+<section class="links">
+    <article>
+        <h2 class="md">{{ mechanic.technicalManualsLinks[0].label }}</h2>
+        <p>{{ mechanic.technicalManualsLinks[0].url }}</p>
+    </article>
+
+    <article>
+        <h2 class="md">{{ mechanic.technicalManualsLinks[1].label }}</h2>
+        <p>{{ mechanic.technicalManualsLinks[1].url }}</p>
+    </article>
+
+</section>

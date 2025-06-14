@@ -1,0 +1,33 @@
+{% render 'partials/head.liquid' %}
+
+<header class="repair-jobs">
+    <a href="/mechanic">
+        <picture>
+            <source type="image/avif" src="/assets/logo-citysprout.avif">
+            <source type="image/webp" src="/assets/logo-citysprout.webp">
+            <img src="/assets/logo-citysprout.png" alt="logo citysprout">
+        </picture>
+    </a>
+
+    <h1 class="md">Repair jobs</h1>
+
+</header>
+
+<section class="repair-jobs">
+
+    <article>
+        <h2 class="md">{{ mechanic.assignedRepairJobs[0].systemId }}</h2>
+        <p>{{ mechanic.assignedRepairJobs[0].issueReported }}</p>
+        <p>{{ mechanic.assignedRepairJobs[0].priority }}</p>
+        <p>{{ mechanic.assignedRepairJobs[0].partsNeeded }}</p>
+        <p>{{ mechanic.assignedRepairJobs[0].status }}</p>
+    </article>
+
+    <article>
+        <h2 class="md">{{ mechanic.assignedRepairJobs[1].systemId }}</h2>
+        <p>{{ mechanic.assignedRepairJobs[1].issueReported }}</p>
+        <p>{{ mechanic.assignedRepairJobs[1].priority }}</p>
+        <p>{{ mechanic.assignedRepairJobs[1].partsNeeded }}</p>
+        <p>{{ mechanic.assignedRepairJobs[1].status }}</p>
+    </article>
+</section>
