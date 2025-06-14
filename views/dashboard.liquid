@@ -1,6 +1,8 @@
 {% render 'partials/head.liquid' %}
 
-{% render 'partials/header.liquid', roles: roles, roleSpecificData: roleSpecificData, translations: translations %}
+{% render 'partials/header.liquid' %}
+
+{% render 'partials/greeting.liquid', roles: roles, roleSpecificData: roleSpecificData, translations: translations %}
 
 <main>
     <section class="dashboard">
@@ -8,25 +10,30 @@
             {% if roles.roleName == 'Mechanic' %}
                 <ul>
                     <li>
-                        <a href="/">
+                        <a href="/mechanic/maintenance-schedule" class="specifics-details-link">
                         {% render './partials/icons/maintenance.liquid' %}
                          Maintenance schedule
                         </a>
+
+                        <dialog class="dialog">
+                            <div class="dialogContent">Inhoud wordt geladen...</div>
+                            <button class="closeDialogBtn">Sluiten</button>
+                        </dialog>
                     </li>
                     <li>
-                        <a href="/">
+                        <a href="/mechanic/assigned-repair-jobs">
                         {% render './partials/icons/repair.liquid' %}
                         Assigned repair jobs
                         </a>
                     </li>
                     <li>
-                        <a href="/">
+                        <a href="/mechanic/system-diagnostic-data">
                         {% render './partials/icons/system-diagnostic.liquid' %}
                         System diagnostic data
                         </a>
                     </li>
                     <li>
-                        <a href="/">
+                        <a href="/mechanic/technical-manual-links">
                         {% render './partials/icons/manual.liquid' %}
                         Technical manuals links
                         </a>
