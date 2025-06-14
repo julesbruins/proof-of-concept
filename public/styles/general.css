@@ -115,3 +115,13 @@ footer {
             list-style-type: none;
         }
 }
+
+
+header nav {
+  border: 2px dashed red;
+}
+
+header nav h2,
+header nav ul {
+  background: yellow;
+}
