@@ -1,11 +1,27 @@
-<link rel="stylesheet" href="/styles/overview.css">
+<link rel="stylesheet" href="/styles/header.css">
 
-<header>
-    <h1 class="md">Welcome back, {{ roles.displayName | split: " " | first }} 👋</h1>
-    
-    <div class="flex-header">
-        <p>Role: {{ roles.roleName }} at {{ roles.companyName }}</p>
-        <p class="messages-count">{{ roles.unreadNotificationsCount }} unread messages</p>
-    </div>
+<header class="nav">
+    <picture>
+        <source type="image/avif" src="/assets/logo-citysprout.avif">
+        <source type="image/webp" src="/assets/logo-citysprout.webp">
+        <img src="/assets/logo-citysprout.png" alt="logo citysprout">
+    </picture>
+
+    <nav>
+        <a class="link-to-menu no-js" href="#link-footer">naar menu</a>
+
+        <div class="nav-placeholder"></div>
+        {% comment %} <details class="menu" open>
+            <summary>MENU</summary>
+            <ul class="content-menu">
+                <li><a href="/mechanic">mechanic</a></li>
+                <li><a href="/boss">boss</a></li>
+                <li><a href="/orderer">orderer</a></li>
+                <li><a href="/controller">controller</a></li>
+                <li><a href="/salesman">salesman</a></li>
+                <li><a href="/grower">grower</a></li>
+            </ul>
+        </details> {% endcomment %}
+    </nav>
 </header>
 
