@@ -1,0 +1,72 @@
+/* MARK: combi styling
+ */
+header {
+    img {
+        width: 75%;
+        display: flex;
+        justify-self: center;
+        margin: 1rem;
+    }
+
+    h1 {
+        background-color: var(--accent-color-two);
+        border-radius: var(--border-radius);
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+section {
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        
+        background-color: var(--accent-color-one);
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin-bottom: 1rem;
+    }
+}
+
+
+
+
+/* MARK: maintenance tasks
+ */
+
+
+section.maintenance-tasks {
+    article {
+        /* display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        
+        background-color: var(--accent-color-one);
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        margin-bottom: 1rem; */
+
+        .flex-inside {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .status {
+                padding: .25rem var(--xs);
+                border-radius: var(--border-radius);
+            }
+            .green {
+                background-color: var(--accent-color-two);
+            }
+            .yellow {
+                background-color: var(--accent-color-three);
+            }
+        }
+    }
+}
+
+
+/* MARK: repair jobs
+*/
+

@@ -3,7 +3,21 @@ body {
     margin: 1rem;
 }
 
-header {
+header.nav {
+    img {
+        width: 90%;
+        display: flex;
+        justify-self: center;
+    }
+    nav {
+        border-radius: var(--border-radius);
+        margin: var(--sm);
+        padding: var(--sm);
+        background-color: var(--accent-color-two);
+    }
+}
+
+section.greeting {
     background-color: var(--accent-color-one);
     border-radius: var(--border-radius);
     padding: var(--sm);
@@ -66,8 +80,14 @@ section.dashboard {
             text-decoration: none;
             line-height: 1;
         }
+
+        @media (width > 64rem) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
     }
 }
+
 
 section.perspective {
     background-color: var(--accent-color-two);
@@ -83,4 +103,15 @@ section.perspective {
     p {
         margin-bottom: var(--xs);
     }
+}
+
+footer {
+    border-radius: var(--border-radius);
+    margin: var(--sm);
+    padding: var(--sm);
+    background-color: var(--accent-color-two);
+
+        li {
+            list-style-type: none;
+        }
 }

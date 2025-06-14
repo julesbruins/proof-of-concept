@@ -1,6 +1,16 @@
+@view-transition {
+  navigation: auto;
+}
+
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 @font-face {
     font-family: "avenir";
-    src: url(/assets/Avenit.ttc) format(truetype);
+    src: url(/assets/Avenir.ttc) format(truetype);
 }
 
 *, *::before, *::after {
@@ -15,6 +25,7 @@ body {
     --background-color: rgb(28, 64, 49);
     --accent-color-one: rgb(255, 255, 255);
     --accent-color-two: rgb(223, 246, 218);
+    --accent-color-three: rgb(234, 211, 163);
 
     /* FONT-WEIGHT */
     --fw-light: 400;
@@ -30,6 +41,10 @@ body {
     --xxl: 6rem;
 
     --border-radius: var(--sm);
+}
+
+.no-js {
+  display: none;
 }
 
 h1, h2, h3, p, a {
@@ -52,6 +67,7 @@ h2,
 h3,
 .md {
     font-size: clamp(1.5rem, 4vw, 2rem)
+
 }
 
 
@@ -63,4 +79,8 @@ h4,
 
 .xs {
     font-size: clamp(.75rem, 3.5vw, 1.5rem)
+}
+
+.bold {
+    font-weight: 900;
 }
