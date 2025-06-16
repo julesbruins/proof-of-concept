@@ -12,13 +12,28 @@ header.nav {
     }
     .link-to-menu {
         border-radius: var(--border-radius);
-        margin: 0 var(--sm);
         padding: var(--sm);
         background-color: var(--accent-color-two);
         display: block;
     }
 
     padding-bottom: 1rem;
+
+    @media (width > 42.5rem) {
+        img {
+            width: 80%;
+        }
+    }
+    @media (width > 60rem) {
+        img {
+            width: 60%;
+        }
+    }
+    @media (width > 75rem) {
+        img {
+            width: 50%;
+        }
+    }
 }
 
 /* JS NAVIGATION */
@@ -27,6 +42,7 @@ header.nav {
 	left:0;
 	height:0;
 	overflow:hidden;
+    /* transition: 3s ease-in; */
 
     background-color: var(--accent-color-two);
 
@@ -44,7 +60,17 @@ header.nav {
     top: auto;
     padding: 1rem;
     margin: 2rem 1rem 1rem 2rem;
+
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: red;
+    }
 }
+
+
 .js .footer-nav  {
         display: none;
 
