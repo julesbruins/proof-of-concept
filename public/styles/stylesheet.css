@@ -28,6 +28,7 @@ body {
     --accent-color-one: rgb(255, 255, 255);
     --accent-color-two: rgb(223, 246, 218);
     --accent-color-three: rgb(234, 211, 163);
+    --accent-color-four: rgb(142, 179, 163);
 
     /* FONT-WEIGHT */
     --fw-light: 400;
@@ -85,4 +86,11 @@ h4,
 
 li {
     list-style-type: none;
+}
+
+
+@keyframes rotation {
+    100% {
+        transform: rotate(360deg);
+    }
 }

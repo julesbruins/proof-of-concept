@@ -129,7 +129,7 @@ section.greeting {
 }
 
 section.dashboard {
-    margin: var(--sm) 0;
+    margin: var(--sm) 0 var(--md) 0;
     padding-top: var(--sm);
     
     h2 {
@@ -142,6 +142,8 @@ section.dashboard {
         grid-template-rows: 1fr 1fr;
         gap: 1rem;
 
+        
+
         li {
             height: 100%;
             align-content: center;
@@ -149,6 +151,17 @@ section.dashboard {
             
             border-radius: var(--border-radius);
             padding: var(--sm);
+
+            transition: .3s ease;
+
+            &:hover {
+                box-shadow: 5px 5px 0px var(--accent-color-four);
+                
+
+                svg {
+                    animation: rotation 1s normal;
+                }
+            }
 
         }
         a {
