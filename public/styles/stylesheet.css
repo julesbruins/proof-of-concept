@@ -2,10 +2,12 @@
   navigation: auto;
 }
 
-@supports (scroll-behavior: smooth) {
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+	@media (prefers-reduced-motion:no-preference) {
+		scroll-behavior:smooth;
+	}
+    
+    interpolate-size:allow-keywords;
 }
 
 @font-face {
@@ -41,13 +43,6 @@ body {
     --xxl: 6rem;
 
     --border-radius: var(--sm);
-}
-
-.no-js {
-  display: block;
-}
-.js .no-js {
-  display: none;
 }
 
 h1, h2, h3, p, a {
@@ -86,4 +81,8 @@ h4,
 
 .bold {
     font-weight: 900;
+}
+
+li {
+    list-style-type: none;
 }

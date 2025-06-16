@@ -1,27 +1,83 @@
 body {
     background-color: var(--background-color);
-    margin: 1rem;
+    margin: var(--md);
 }
 
 header.nav {
     img {
-        width: 90%;
+        width: 100%;
         display: flex;
         justify-self: center;
+        padding: 1rem;
     }
-    nav {
+    .link-to-menu {
         border-radius: var(--border-radius);
-        margin: var(--sm);
+        margin: 0 var(--sm);
         padding: var(--sm);
         background-color: var(--accent-color-two);
+        display: block;
+    }
+
+    padding-bottom: 1rem;
+}
+
+/* JS NAVIGATION */
+.js nav {
+	position:absolute;
+	left:0;
+	height:0;
+	overflow:hidden;
+
+    background-color: var(--accent-color-two);
+
+    border-radius: var(--border-radius);
+    width: fit-content;
+
+    a {
+        padding: 0;
+        background-color: default;
     }
 }
+
+.js nav.is-open {
+    height: auto;
+    top: auto;
+    padding: 1rem;
+    margin: 2rem 1rem 1rem 2rem;
+}
+.js .footer-nav  {
+        display: none;
+
+}
+
+
+@media (width > 32rem) {
+	.js header > .link-to-menu {
+		display:none;
+	}
+	
+	.js nav {
+        display: block;
+		position:static;
+		height:auto;
+		padding: 1rem;
+        width: 100%;
+		transition:0s;
+	}		
+		
+	.js	ul {
+		display:flex;
+		gap:1em;
+
+	}
+}
+
 
 section.greeting {
     background-color: var(--accent-color-one);
     border-radius: var(--border-radius);
     padding: var(--sm);
-    margin: var(--sm);
+    margin: var(--sm) 0;
     display: flex;
     gap: var(--xs);
     flex-direction: column;
@@ -47,7 +103,7 @@ section.greeting {
 }
 
 section.dashboard {
-    margin: var(--sm);
+    margin: var(--sm) 0;
     padding-top: var(--sm);
     
     h2 {
@@ -65,7 +121,6 @@ section.dashboard {
             align-content: center;
             background-color: var(--accent-color-one);
             
-            list-style-type: none;
             border-radius: var(--border-radius);
             padding: var(--sm);
 
@@ -93,7 +148,7 @@ section.perspective {
     background-color: var(--accent-color-two);
     border-radius: var(--border-radius);
     padding: var(--sm);
-    margin: var(--md) var(--sm) var(--sm) var(--sm);
+    margin-top: var(--md);
 
     max-width: 70ch;
 
@@ -111,17 +166,5 @@ footer {
     padding: var(--sm);
     background-color: var(--accent-color-two);
 
-        li {
-            list-style-type: none;
-        }
 }
 
-
-header nav {
-  border: 2px dashed red;
-}
-
-header nav h2,
-header nav ul {
-  background: yellow;
-}
