@@ -169,6 +169,12 @@ section.dashboard {
     }
 }
 
+section.post {
+    background-color: var(--accent-color-one);
+    border-radius: var(--border-radius);
+    padding: var(--sm);
+}
+
 
 section.perspective {
     background-color: var(--accent-color-two);

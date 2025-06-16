@@ -73,6 +73,27 @@ app.get('/mechanic/technical-manual-links', async function (request, response) {
 })
 
 
+// POST 
+app.post('/:role', async function (request, response) {
+  const role = request.params.role
+  const dynamicRole = await fetch(`https://fdnd-fresk-api.netlify.app/get-content-by-role?userRole=${role}`)
+  const dynamicRoleJSON = await dynamicRole.json()
+  
+  await fetch('https://fdnd-agency.directus.app/items/dropandheal_messages', {      // Je stuurt de message naar deze API
+    method: 'POST',                                                                 // Je gebruikt de POST methode
+    body: JSON.stringify({
+      from: `jules-sprint-12_${request.body.name}`,                           // Ik gebruikt uit database from, exercise & text (Jules_ zorgt ervoor dat alleen mijn messages gebruikt worden)
+      text: request.body.message                                             // text zorgt ervoor dat in het 'text' veld in database de geposte content komt
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  });
+
+  response.redirect(303, `/:role`)         // zorgt ervoor dat je na de post succesvol doorgelijdt wordt naar de pagina waar de berichten voor die specifieke opdracht worden weergegeven.
+})  
+
+
 // SET PORT
 app.set('port', process.env.PORT || 8000)
  

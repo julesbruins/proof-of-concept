@@ -177,26 +177,27 @@
             {% endif %}
     </section>
 
-        {% comment %} <ul>
-            <li><a href="">Key: currentMaintenanceSchedules </a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-        </ul> {% endcomment %}
-        {% comment %} {{ roleSpecificData | json }} {% endcomment %}
-
-    {% comment %} {% for item in roleSpecificData %} 
-    Key: currentMaintenanceSchedules 
-    Key: assignedRepairJobs 
-    Key: systemDiagnosticData 
-    Key: technicalManualsLinks
-    {% endfor %} {% endcomment %}
-
     <section class="perspective">
         <h2 class="md">My perspective as {{ roles.roleName }}</h2>
         <p>{{ roles.companyPerspectiveHtml }}</p>
     </section>
 
+    <section class="post">
+        <h2>messages</h2>    
+            <form method="POST" action="/community-drop/{{ id }}" data-enhanced="form" id="post-form">
+            <label for="">name
+                <input type="text" name="name" required>
+            </label>
+            <label for="">Message to {{ roles.displayName | split: " " | first }}
+                <textarea name="community_drop" id="message" rows="4" required></textarea>
+            </label>
+            <button type="submit" class="post-btn">Plaats bericht</button>
+            <button hidden type="button">sluiten</button>
+
+
+            <div class="loading-state"></div>
+        </form>
+    </section>
 </main>
 
 {% render 'partials/foot.liquid' %}
