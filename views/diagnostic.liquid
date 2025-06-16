@@ -15,33 +15,14 @@
 <section class="diagnostics">
 
 
-
-    </article>
-        <article>
-        <h2 class="md">{{ mechanic.systemDiagnosticData }}</h2>
-        <p>{{ mechanic.systemDiagnosticData.VF01-A.status }}</p>
-        <p>{{ mechanic.systemDiagnosticData.VF01-A.lastCheck }}</p>
-        <p>{{ mechanic.systemDiagnosticData.VF01-A.issues }}</p>
-    </article>
-
+{% for system_data in mechanic.systemDiagnosticData %}
     <article>
-        <h2 class="md">{{ mechanic.systemDiagnosticData[1] }}</h2>
-        <p>{{ mechanic.systemDiagnosticData.AQ02-C.status }}</p>
-        <p>{{ mechanic.systemDiagnosticData.AQ02-C.lastCheck }}</p>
-        <p>{{ mechanic.systemDiagnosticData.AQ02-C.issues }}</p>
-        <p>{{ mechanic.systemDiagnosticData.AQ02-C.details }}</p>
-
+        <h2 class="md">{{ system_data[0] }}</h2>
+        <p>{{ system_data[1].status }}</p>
+        <p>{{ system_data[1].lastCheck }}</p>
+        <p>{{ system_data[1].issues }}</p>
     </article>
-
-    <article>
-        <h2 class="md">{{ mechanic.systemDiagnosticData[1] }}</h2>
-        <p>{{ mechanic.systemDiagnosticData.VF02-B.status }}</p>
-        <p>{{ mechanic.systemDiagnosticData.VF02-B.lastCheck }}</p>
-        <p>{{ mechanic.systemDiagnosticData.VF02-B.issues }}</p>
-        <p>{{ mechanic.systemDiagnosticData.VF02-B.details }}</p>
-    </article>
-
-<pre>{{ mechanic.systemDiagnosticData | json:4 }}</pre>
+{% endfor %}
 
     
 </section>
