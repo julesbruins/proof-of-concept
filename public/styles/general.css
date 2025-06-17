@@ -135,6 +135,24 @@ section.greeting {
     gap: var(--xs);
     flex-direction: column;
 
+
+h1 {
+  display: inline-block; /* Nodig voor hover op inline element */
+  cursor: pointer;
+}
+
+h1::after {
+  content: "👋";
+  display: inline-block;
+  margin-left: .5rem;
+  transform-origin: 70% 70%; /* zwaai vanuit “pols” */
+  transition: transform 0.3s ease;
+}
+
+h1:hover::after {
+  animation: wave 0.8s ease-in-out infinite;
+}
+
     .messages-count {
         background-color: var(--accent-color-two);
         border-radius: var(--xs);
