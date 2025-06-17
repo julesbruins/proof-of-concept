@@ -82,7 +82,7 @@ app.post('/:role', async function (request, response) {
   await fetch('https://fdnd-agency.directus.app/items/dropandheal_messages', {      // Je stuurt de message naar deze API
     method: 'POST',                                                                 // Je gebruikt de POST methode
     body: JSON.stringify({
-      from: `jules-sprint-12_${request.body.name}`,                           // Ik gebruikt uit database from, exercise & text (Jules_ zorgt ervoor dat alleen mijn messages gebruikt worden)
+      from: `jules-sprint-12_${request.body.name}`,                           // Ik gebruikt uit database from & text (jules-sprint-12_ zorgt ervoor dat alleen mijn messages gebruikt worden)
       text: request.body.message                                             // text zorgt ervoor dat in het 'text' veld in database de geposte content komt
     }),
     headers: {
@@ -90,7 +90,7 @@ app.post('/:role', async function (request, response) {
     }
   });
 
-  response.redirect(303, `/:role`)         // zorgt ervoor dat je na de post succesvol doorgelijdt wordt naar de pagina waar de berichten voor die specifieke opdracht worden weergegeven.
+  response.redirect(303, `/${role}`)         // zorgt ervoor dat je na de post succesvol doorgelijdt wordt naar de pagina waar de berichten voor die specifieke opdracht worden weergegeven.
 })  
 
 

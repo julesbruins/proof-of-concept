@@ -177,27 +177,31 @@
             {% endif %}
     </section>
 
+    <section class="post">
+        <h2>{{ roles.displayName | split: " " | first }}'s messages</h2>
+
+        
+        <a href="" class="post-btn">Plaats bericht</a>    
+        
+        <dialog open>
+            <form method="POST" action="/{{ roles.roleName }}" data-enhanced="form" id="post-form">
+                <label for="">name
+                    <input type="text" name="name" required>
+                </label>
+                <label for="">Message to {{ roles.displayName | split: " " | first }}
+                    <textarea name="message" id="message" rows="4" required></textarea>
+                </label>
+                <button type="submit" class="post-btn">Plaats bericht</button>
+            </form>
+        </dialog>
+    </section>
+
     <section class="perspective">
         <h2 class="md">My perspective as {{ roles.roleName }}</h2>
         <p>{{ roles.companyPerspectiveHtml }}</p>
     </section>
 
-    <section class="post">
-        <h2>messages</h2>    
-            <form method="POST" action="/community-drop/{{ id }}" data-enhanced="form" id="post-form">
-            <label for="">name
-                <input type="text" name="name" required>
-            </label>
-            <label for="">Message to {{ roles.displayName | split: " " | first }}
-                <textarea name="community_drop" id="message" rows="4" required></textarea>
-            </label>
-            <button type="submit" class="post-btn">Plaats bericht</button>
-            <button hidden type="button">sluiten</button>
-
-
-            <div class="loading-state"></div>
-        </form>
-    </section>
+    
 </main>
 
 {% render 'partials/foot.liquid' %}
