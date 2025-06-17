@@ -25,15 +25,9 @@ app.get('/:role', async function (request, response) {
     const dynamicRole = await fetch(`https://fdnd-fresk-api.netlify.app/get-content-by-role?userRole=${role}`)
     const dynamicRoleJSON = await dynamicRole.json()
 
-    // const mechanic = await fetch(`https://fdnd-fresk-api.netlify.app/get-content-by-role?userRole=mechanic`)
-    // const mechanicJSON = await mechanic.json()
-
-    // console.log(mechanicJSON)
-
     response.render('dashboard.liquid', {
       roles: dynamicRoleJSON.commonData,
-      roleSpecificData: dynamicRoleJSON.roleSpecificData,
-      // mechanic: mechanicJSON.roleSpecificData
+      roleSpecificData: dynamicRoleJSON.roleSpecificData
     })
 })
 
@@ -93,6 +87,18 @@ app.post('/:role', async function (request, response) {
   response.redirect(303, `/${role}`)         // zorgt ervoor dat je na de post succesvol doorgelijdt wordt naar de pagina waar de berichten voor die specifieke opdracht worden weergegeven.
 })  
 
+
+// GET ROUTE MESSAGES
+app.get('/:role', async function (request, resposnse) {
+  const role = request.params.role
+  const dynamicRole = await fetch(`https://fdnd-fresk-api.netlify.app/get-content-by-role?userRole=${role}`)
+  const dynamicRoleJSON = await dynamicRole.json()
+
+  const messages = await fetch('https://fdnd-agency.directus.app/items/dropandheal_messages?filter={%22from%22:{%22_contains%22:%22jules-sprint-12_%22}}')
+  const messagesJSON = await messages.json()
+
+    response.render('dashboard.liquid', { message: messagesJSON.data })
+})
 
 // SET PORT
 app.set('port', process.env.PORT || 8000)

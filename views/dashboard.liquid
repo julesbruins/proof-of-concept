@@ -176,10 +176,22 @@
                 </ul>
             {% endif %}
     </section>
-
+    
+    <div class="flex-messages-perspective">
     <section class="post">
-        <h2>{{ roles.displayName | split: " " | first }}'s messages</h2>
+        <h2 class="md">{{ roles.displayName | split: " " | first }}'s messages</h2>
 
+        {% for message in message %}
+            <article class="drops">
+                <h3>{{ message.from | replace: "jules-sprint-12__", "" }}</h3>
+                <p>{{ message.text }}</p>
+                <p>Op {{ message.date_created | date: "%-d %B" }}</p>
+            </article> 
+        {% else %}
+                <p class="empty-state">Er zijn geen berichten voor {{ roles.displayName | split: " " | first }}, klik op de button om het eerste bericht achter te laten.</p>
+        {% endfor %}
+
+        <pre>{{ message.from | json:4 }}</pre>
         
         <a href="" class="post-btn">Plaats bericht</a>    
         
@@ -200,6 +212,7 @@
         <h2 class="md">My perspective as {{ roles.roleName }}</h2>
         <p>{{ roles.companyPerspectiveHtml }}</p>
     </section>
+    </div>
 
     
 </main>
