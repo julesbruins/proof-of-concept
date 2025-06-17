@@ -210,6 +210,43 @@ section.post {
     background-color: var(--accent-color-one);
     border-radius: var(--border-radius);
     padding: var(--sm);
+    margin-top: var(--sm);
+    h2 {
+        margin-bottom: var(--sm);
+    }
+    dialog {
+        border: none;
+        background-color: var(--accent-color-two);
+        border-radius: var(--border-radius);
+        padding: var(--sm);
+
+        label {
+            display: flex;
+            flex-direction: column;
+            font-family: var(--primary-font);
+            color: var(--background-color);
+
+            input, 
+            textarea {
+                font-family: var(--primary-font);
+                color: var(--background-color);
+                font-size: 1rem;
+                padding: .5rem;
+                border: none;
+                border-radius: var(--border-radius);
+            }
+        }
+
+    }
+    .post-btn {
+        font-family: var(--primary-font);
+        background-color: var(--accent-color-two);
+        text-decoration: none;
+        font-size: 1rem;
+        padding: .5rem;
+        border: none;
+        border-radius: var(--border-radius);
+    }
 }
 
 
