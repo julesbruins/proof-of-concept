@@ -44,6 +44,7 @@ body {
     --xxl: 6rem;
 
     --border-radius: var(--sm);
+    --box-shadow: 5px 5px 0px var(--accent-color-four);
 }
 
 h1, h2, h3, p, a {

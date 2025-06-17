@@ -15,6 +15,8 @@ header.nav {
         padding: var(--sm);
         background-color: var(--accent-color-two);
         display: block;
+        anchor-name: --menu;
+        position: relative;
     }
 
     padding-bottom: 1rem;
@@ -42,16 +44,32 @@ header.nav {
 	left:0;
 	height:0;
 	overflow:hidden;
-    /* transition: 3s ease-in; */
-
-    background-color: var(--accent-color-two);
+    position-anchor: --menu;
+    position-area: bottom span-right;
+    padding: 0 1rem;
+    transition: .1s ease;
 
     border-radius: var(--border-radius);
+    background-color: var(--accent-color-two);
     width: fit-content;
 
+    li {
+        margin-bottom: var(--xs);
+    }
+
     a {
-        padding: 0;
-        background-color: default;
+        padding: .25rem;
+        border-radius: .5rem;
+
+        &:hover {
+            background-color: var(--background-color);
+            color: var(--accent-color-one);
+        }
+    }
+
+    @media (max-width: 34rem) {
+        border-radius: 1rem 0 1rem 1rem;
+        box-shadow: var(--box-shadow);
     }
 }
 
@@ -59,25 +77,28 @@ header.nav {
     height: auto;
     top: auto;
     padding: 1rem;
-    margin: 2rem 1rem 1rem 2rem;
+    margin: 0rem;
+    border-radius: 0rem 0 1rem 1rem;
 
-    &::after {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: red;
+    transition: .3s ease;
+
+    @media (width > 34rem) {
+        border-radius: var(--border-radius);
     }
 }
 
-
 .js .footer-nav  {
-        display: none;
+    display: none;
 
 }
 
+.js .link-to-menu:has(+ .is-open) {
+    border-radius: 1rem 1rem 1rem 0;
+    box-shadow: var(--box-shadow);
+    transition: .3s ease;
+}
 
-@media (width > 32rem) {
+@media (width > 34rem) {
 	.js header > .link-to-menu {
 		display:none;
 	}
@@ -88,13 +109,19 @@ header.nav {
 		height:auto;
 		padding: 1rem;
         width: 100%;
+        border-radius: var(--border-radius);
+
 		transition:0s;
 	}		
 		
 	.js	ul {
 		display:flex;
 		gap:1em;
+        justify-content: center;
 
+        li {
+            margin-bottom: 0;
+        }
 	}
 }
 
@@ -140,9 +167,7 @@ section.dashboard {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        gap: 1rem;
-
-        
+        gap: 1rem;  
 
         li {
             height: 100%;
@@ -155,9 +180,8 @@ section.dashboard {
             transition: .3s ease;
 
             &:hover {
-                box-shadow: 5px 5px 0px var(--accent-color-four);
+                box-shadow: var(--box-shadow);
                 
-
                 svg {
                     animation: rotation 1s normal;
                 }
