@@ -178,6 +178,7 @@
     </section>
     
     <div class="flex-messages-perspective">
+    
     <section class="post">
         <h2 class="md">{{ roles.displayName | split: " " | first }}'s messages</h2>
 
@@ -214,5 +215,39 @@
 
     
 </main>
+
+<script>
+    document.addEventListener('submit', async function(event) {
+ 
+    const form = event.target
+ 
+    if (!form.hasAttribute('data-enhanced')) {
+      return
+    }
+ 
+    event.preventDefault()
+ 
+    let formData = new FormData(form)
+ 
+    if (event.submitter) {
+      formData.append(event.submitter.name, event.submitter.value)
+    }
+ 
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new URLSearchParams(formData)
+    })
+ 
+    const responseText = await response.text()
+    const parser = new DOMParser()
+    const responseDOM = parser.parseFromString(responseText, 'text/html')
+    
+    const newMessage = responseDOM.querySelector('.post')
+    const messages = document.querySelector('.post')
+
+    messages.innerHTML = newMessage.innerHTML
+  })
+ 
+</script>
 
 {% render 'partials/foot.liquid' %}

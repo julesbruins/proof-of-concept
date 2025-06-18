@@ -26,7 +26,7 @@ app.get('/:role', async function (request, response) {
     const dynamicRole = await fetch(`https://fdnd-fresk-api.netlify.app/get-content-by-role?userRole=${role}`)
     const dynamicRoleJSON = await dynamicRole.json()
 
-    const messages = await fetch(`https://fdnd.directus.app/items/messages?filter={%22for%22:{%22_icontains%22:%22jules-sprint-12_${role}%22}}`)
+    const messages = await fetch(`https://fdnd.directus.app/items/messages?filter={%22for%22:{%22_contains%22:%22jules-sprint-12_a_%22}}&sort=-created`)
     const messagesJSON = await messages.json()
 
     response.render('dashboard.liquid', {
@@ -83,7 +83,7 @@ app.post('/:role', async function (request, response) {
     method: 'POST',                                              // Je gebruikt de POST methode
     body: JSON.stringify({
       from: `${request.body.name}`,                             // Ik gebruikt uit database from & text (jules-sprint-12_ zorgt ervoor dat alleen mijn messages gebruikt worden)
-      for: `jules-sprint-12_${role}`,
+      for: `jules-sprint-12_a_${role}`,
       text: request.body.message                                // text zorgt ervoor dat in het 'text' veld in database de geposte content komt
     }),
     headers: {

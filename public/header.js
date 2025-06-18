@@ -1,3 +1,4 @@
+// PE navigatie 
   document.documentElement.classList.remove("no-js");
   document.documentElement.classList.add("js");
 
@@ -18,3 +19,12 @@ function toggleMenu(event) {
 	
 	deNav.classList.toggle("is-open");
 }
+
+
+// DIALOG
+const dialogOpen = document.querySelector('.post-btn')
+const dialog = document.querySelector('form')
+
+dialogOpen.addEventListener('click', function(event) {
+      dialog.showModal();
+})
