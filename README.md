@@ -37,13 +37,7 @@ Op de site kun je kiezen wat jouw rol is binnen het bedrijf via het menu. Dan ko
 ## Kenmerken
 Tijdens het project is er gewerkt met de techniek _'De hierarchy of user needs'_. Door deze strategie te gebruiken wordt er al veel gedacht aan progressive enhancement (zorgen dat de site werkt voor iedere gebruiker). _'De hierarchy of user needs'_ zorgt ervoor dat je de site in volgende opeenvolgende stappen opbouwt:
 
-<details>
- <summary>AFBEELDING: de hierarchy of user needs</summary>
-
-![aarron-walter-user-needs](https://github.com/user-attachments/assets/258443ac-3067-478e-97b9-94b6e26f54f7)
-
- 
-</details>
+<img src="https://github.com/user-attachments/assets/258443ac-3067-478e-97b9-94b6e26f54f7" width="320">
 
 
 ### functional & reliable - progressive enhancement (stap 1 & 2)
@@ -62,7 +56,7 @@ Voorbeelden hiervan zijn de volgende:
 * Responsiveness: Je zorgt er ook voor dat je site op verschillende schermformaten werkt en te gebruiken is. 
 
 
-### pleasurable (stap 4)
+### Pleasurable (stap 4)
 _De pleasurable laag van de hierarchy of user needs zorgt ervoor dat een gebruiker plezier beleeft aan de website._
 
 Voorbeelden hiervan zijn de volgende:
@@ -73,6 +67,9 @@ Voorbeelden hiervan zijn de volgende:
 
 
 Buiten de hierarchy of user needs zijn er nog wat losse kenmerken aan dit project. Deze staan hieronder kort per stuk uitgewerkt...
+<!-- POST + client side fetch + states -->
+<!-- anchor positioning -->
+<!-- code conventions -->
 
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
 
