@@ -7,209 +7,221 @@
 <main>
     <section class="dashboard">
         <h2 class="md">{{ roles.dashboardTitle }}</h2>
-            {% if roles.roleName == 'Mechanic' %}
-                <ul>
-                    <li>
-                        <a href="/mechanic/maintenance-schedule" class="specifics-details-link">
-                        {% render './partials/icons/maintenance.liquid' %}
-                         Maintenance schedule
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/mechanic/assigned-repair-jobs">
-                        {% render './partials/icons/repair.liquid' %}
-                        Assigned repair jobs
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/mechanic/system-diagnostic-data">
-                        {% render './partials/icons/system-diagnostic.liquid' %}
-                        System diagnostic data
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/mechanic/technical-manual-links">
-                        {% render './partials/icons/manual.liquid' %}
-                        Technical manuals links
-                        </a>
-                    </li>
-                </ul>
+        {% if roles.roleName == 'Mechanic' %}
+        <ul>
+            <li>
+                <a href="/mechanic/maintenance-schedule" class="specifics-details-link">
+                    {% render './partials/icons/maintenance.liquid' %}
+                    Maintenance schedule
+                </a>
+            </li>
+            <li>
+                <a href="/mechanic/assigned-repair-jobs">
+                    {% render './partials/icons/repair.liquid' %}
+                    Assigned repair jobs
+                </a>
+            </li>
+            <li>
+                <a href="/mechanic/system-diagnostic-data">
+                    {% render './partials/icons/system-diagnostic.liquid' %}
+                    System diagnostic data
+                </a>
+            </li>
+            <li>
+                <a href="/mechanic/technical-manual-links">
+                    {% render './partials/icons/manual.liquid' %}
+                    Technical manuals links
+                </a>
+            </li>
+        </ul>
 
 
-            {% elsif roles.roleName == 'Boss' %}
-                <ul>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/performance.liquid' %}
-                        Key performance indicators
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/financial.liquid' %}
-                        Financial Summary
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/development.liquid' %}
-                        Research & development projects
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/strategy.liquid' %}
-                        Strategic goals
-                        </a>
-                    </li>
-                </ul>
+        {% elsif roles.roleName == 'Boss' %}
+        <ul>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/performance.liquid' %}
+                    Key performance indicators
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/financial.liquid' %}
+                    Financial Summary
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/development.liquid' %}
+                    Research & development projects
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/strategy.liquid' %}
+                    Strategic goals
+                </a>
+            </li>
+        </ul>
 
-            {% elsif roles.roleName == 'Orderer' %}
-                <ul>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/inventory.liquid' %}
-                        Low inventory alerts
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/strategy.liquid' %}
-                        Supplier List
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/performance.liquid' %}
-                        Active purchase orders
-                        </a>
-                    </li>
-                </ul>
+        {% elsif roles.roleName == 'Orderer' %}
+        <ul>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/inventory.liquid' %}
+                    Low inventory alerts
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/strategy.liquid' %}
+                    Supplier List
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/performance.liquid' %}
+                    Active purchase orders
+                </a>
+            </li>
+        </ul>
 
-            {% elsif roles.roleName == 'Controller' %}
-                <ul>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/timeline.liquid' %} 
-                        Active project timelines
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/performance.liquid' %}
-                        Project budget
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/inventory.liquid' %} 
-                        Resource allocation overview
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/metrics.liquid' %}
-                        Effeciency metrics
-                        </a>
-                    </li>
-                </ul>
+        {% elsif roles.roleName == 'Controller' %}
+        <ul>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/timeline.liquid' %}
+                    Active project timelines
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/performance.liquid' %}
+                    Project budget
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/inventory.liquid' %}
+                    Resource allocation overview
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/metrics.liquid' %}
+                    Effeciency metrics
+                </a>
+            </li>
+        </ul>
 
-            {% elsif roles.roleName == 'Salesman' %}
-                <ul>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/shop.liquid' %}                        
-                        Product catalogus
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/financial.liquid' %}
-                        Current sales leads
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/performance.liquid' %}
-                        Sales targets
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/percentage.liquid' %}
-                        Commission Structure
-                        </a>
-                    </li>
-                </ul>
-        
-            {% elsif roles.roleName == 'Grower' %}
-                <ul>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/cycle.liquid' %}
-                        Active crop cycles
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/alert.liquid' %}
-                        Environmental alerts
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/tasks.liquid' %}
-                        Upcoming tasks
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/">
-                        {% render './partials/icons/links.liquid' %}
-                        Quick links
-                        </a>
-                    </li>
-                </ul>
-            {% endif %}
+        {% elsif roles.roleName == 'Salesman' %}
+        <ul>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/shop.liquid' %}
+                    Product catalogus
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/financial.liquid' %}
+                    Current sales leads
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/performance.liquid' %}
+                    Sales targets
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/percentage.liquid' %}
+                    Commission Structure
+                </a>
+            </li>
+        </ul>
+
+        {% elsif roles.roleName == 'Grower' %}
+        <ul>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/cycle.liquid' %}
+                    Active crop cycles
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/alert.liquid' %}
+                    Environmental alerts
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/tasks.liquid' %}
+                    Upcoming tasks
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    {% render './partials/icons/links.liquid' %}
+                    Quick links
+                </a>
+            </li>
+        </ul>
+        {% endif %}
     </section>
-    
+
     <div class="flex-messages-perspective">
-    
-    <section class="post">
-        <h2 class="md">{{ roles.roleName }}'s messages</h2>
 
-        {% for message in messages %}
-            <article class="drops">
-                <h3 class="md">{{ message.from }}</h3>
-                <p>{{ message.text }}</p>
-                <p>On {{ message.created | date: "%-d %B" }}</p>
-            </article> 
-        {% else %}
-                <p class="empty-state">Er zijn geen berichten voor {{ roles.displayName | split: " " | first }}, klik op de button om het eerste bericht achter te laten.</p>
-        {% endfor %}
-        
-        <button href="" class="dialog-btn">Plaats bericht</button>    
-        
-        <dialog>
-            <form method="POST" action="/{{ roles.roleName }}" data-enhanced="form" id="post-form">
-                <label for="">name
-                    <input type="text" name="name" required>
-                </label>
-                <label for="">Message to {{ roles.displayName | split: " " | first }}
-                    <textarea name="message" id="message" rows="4" required></textarea>
-                </label>
-                <button type="submit" class="post-btn">Plaats bericht</button>
-                <button type="reset" class="close-btn">close</button>
-            </form>
-        </dialog>
-    </section>
+        <section class="post">
+            <div class="flex">
+                <h2 class="md">Citysprout's messages</h2>
+                <button href="" class="dialog-btn button">Plaats bericht</button>
+            </div>
 
-    <section class="perspective">
-        <h2 class="md">My perspective as {{ roles.roleName }}</h2>
-        <p>{{ roles.companyPerspectiveHtml }}</p>
-    </section>
+            <div class="all-messages">
+
+                {% for message in messages %}
+                <article class="drops">
+                    <h3 class="md">{{ message.from }}</h3>
+                    <p>{{ message.text }}</p>
+                    <p>On {{ message.created | date: "%-d %B" }}</p>
+                </article>
+                {% else %}
+                <p class="empty-state">Er zijn nog geen berichten. Laat het eerste bericht achter ↗️.</p>
+                {% endfor %}
+
+            </div>
+
+
+
+            <dialog>
+                <form method="POST" action="/{{ roles.roleName }}" data-enhanced="form" id="post-form">
+                    <label for="">name
+                        <input type="text" name="name" required>
+                    </label>
+                    <label for="">Message to Citysprout
+                        <textarea name="message" id="message" rows="4" required></textarea>
+                    </label>
+                    <button type="submit" class="post-btn button">Plaats bericht</button>
+                    <button type="reset" class="close-btn button">close</button>
+
+                    <div class="loading-state"></div>
+                    
+                </form>
+            </dialog>
+
+            <div class="succes-message"><p>Your message has been sent!</p></div>
+        </section>
+
+        <section class="perspective">
+            <h2 class="md">My perspective as {{ roles.roleName }}</h2>
+            <p>{{ roles.companyPerspectiveHtml }}</p>
+        </section>
     </div>
 
-    
+
 </main>
 
 <script>
@@ -233,17 +245,7 @@
       method: form.method,
       body: new URLSearchParams(formData)
     })
- 
-    const responseText = await response.text()
-    const parser = new DOMParser()
-    const responseDOM = parser.parseFromString(responseText, 'text/html')
-    
-    const newMessage = responseDOM.querySelector('.post')
-    const messages = document.querySelector('.post')
 
-    messages.innerHTML = newMessage.innerHTML
-  })
- 
 </script>
 
 {% render 'partials/foot.liquid' %}
