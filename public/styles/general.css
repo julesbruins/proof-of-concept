@@ -3,6 +3,14 @@ body {
     margin: var(--md);
 }
 
+.index {
+    li {
+        background-color: var(--accent-color-one);
+        padding: 1rem;
+        border-radius: var(--border-radius);
+    }
+}
+
 header.nav {
     img {
         width: 100%;
@@ -10,6 +18,7 @@ header.nav {
         justify-self: center;
         padding: 1rem;
     }
+
     .link-to-menu {
         border-radius: var(--border-radius);
         padding: var(--sm);
@@ -26,11 +35,13 @@ header.nav {
             width: 80%;
         }
     }
+
     @media (width > 60rem) {
         img {
             width: 60%;
         }
     }
+
     @media (width > 75rem) {
         img {
             width: 50%;
@@ -40,10 +51,10 @@ header.nav {
 
 /* JS NAVIGATION */
 .js nav {
-	position:absolute;
-	left:0;
-	height:0;
-	overflow:hidden;
+    position: absolute;
+    left: 0;
+    height: 0;
+    overflow: hidden;
     position-anchor: --menu;
     position-area: bottom span-right;
     padding: 0 1rem;
@@ -87,7 +98,7 @@ header.nav {
     }
 }
 
-.js .footer-nav  {
+.js .footer-nav {
     display: none;
 
 }
@@ -99,30 +110,30 @@ header.nav {
 }
 
 @media (width > 42rem) {
-	.js header > .link-to-menu {
-		display:none;
-	}
-	
-	.js nav {
+    .js header>.link-to-menu {
+        display: none;
+    }
+
+    .js nav {
         display: block;
-		position:static;
-		height:auto;
-		padding: 1rem;
+        position: static;
+        height: auto;
+        padding: 1rem;
         width: 100%;
         border-radius: var(--border-radius);
 
-		transition:0s;
-	}		
-		
-	.js	ul {
-		display:flex;
-		gap:1em;
+        transition: 0s;
+    }
+
+    .js ul {
+        display: flex;
+        gap: 1em;
         justify-content: center;
 
         li {
             margin-bottom: 0;
         }
-	}
+    }
 }
 
 
@@ -136,22 +147,24 @@ section.greeting {
     flex-direction: column;
 
 
-h1 {
-  display: inline-block; /* Nodig voor hover op inline element */
-  cursor: pointer;
-}
+    h1 {
+        display: inline-block;
+        /* Nodig voor hover op inline element */
+        cursor: pointer;
+    }
 
-h1::after {
-  content: "👋";
-  display: inline-block;
-  margin-left: .5rem;
-  transform-origin: 70% 70%; /* zwaai vanuit “pols” */
-  transition: transform 0.3s ease;
-}
+    h1::after {
+        content: "👋";
+        display: inline-block;
+        margin-left: .5rem;
+        transform-origin: 70% 70%;
+        /* zwaai vanuit “pols” */
+        transition: transform 0.3s ease;
+    }
 
-h1:hover::after {
-  animation: wave 0.8s ease-in-out infinite;
-}
+    h1:hover::after {
+        animation: wave 0.8s ease-in-out infinite;
+    }
 
     .messages-count {
         background-color: var(--accent-color-two);
@@ -167,31 +180,33 @@ h1:hover::after {
             justify-content: space-between;
             align-items: center;
         }
+
         .messages-count {
             margin-top: 0;
         }
-    } 
+    }
 }
 
 section.dashboard {
-    margin: var(--sm) 0 var(--md) 0;
+    margin: var(--md) 0 var(--lg) 0;
     padding-top: var(--sm);
-    
+
     h2 {
         color: var(--accent-color-one);
     }
+
     ul {
         margin-top: 1rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        gap: 1rem;  
+        gap: 1rem;
 
         li {
             height: 100%;
             align-content: center;
             background-color: var(--accent-color-one);
-            
+
             border-radius: var(--border-radius);
             padding: var(--sm);
 
@@ -199,13 +214,13 @@ section.dashboard {
 
             &:hover {
                 box-shadow: var(--box-shadow);
-                
+
                 svg {
                     animation: rotation 1s normal;
                 }
             }
-
         }
+
         a {
             display: flex;
             flex-direction: column;
@@ -220,6 +235,7 @@ section.dashboard {
         @media (width > 64rem) {
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: 1fr;
+            gap: 2rem;
         }
     }
 }
@@ -262,7 +278,6 @@ section.post {
             font-family: var(--primary-font);
             color: var(--background-color);
 
-            input, 
             input,
             textarea {
                 font-family: var(--primary-font);
