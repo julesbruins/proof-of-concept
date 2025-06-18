@@ -18,4 +18,3 @@ function toggleMenu(event) {
 	
 	deNav.classList.toggle("is-open");
 }
-

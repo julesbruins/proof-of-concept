@@ -22,12 +22,17 @@ app.get('/', function (request, response) {
 // ALLE WERKNEMERS
 app.get('/:role', async function (request, response) {
     const role = request.params.role
+    console.log(role)
     const dynamicRole = await fetch(`https://fdnd-fresk-api.netlify.app/get-content-by-role?userRole=${role}`)
     const dynamicRoleJSON = await dynamicRole.json()
 
+    const messages = await fetch(`https://fdnd.directus.app/items/messages?filter={%22for%22:{%22_icontains%22:%22jules-sprint-12_${role}%22}}`)
+    const messagesJSON = await messages.json()
+
     response.render('dashboard.liquid', {
       roles: dynamicRoleJSON.commonData,
-      roleSpecificData: dynamicRoleJSON.roleSpecificData
+      roleSpecificData: dynamicRoleJSON.roleSpecificData,
+      messages: messagesJSON.data
     })
 })
 
@@ -67,17 +72,19 @@ app.get('/mechanic/technical-manual-links', async function (request, response) {
 })
 
 
+
 // POST 
 app.post('/:role', async function (request, response) {
   const role = request.params.role
   const dynamicRole = await fetch(`https://fdnd-fresk-api.netlify.app/get-content-by-role?userRole=${role}`)
   const dynamicRoleJSON = await dynamicRole.json()
   
-  await fetch('https://fdnd-agency.directus.app/items/dropandheal_messages', {      // Je stuurt de message naar deze API
-    method: 'POST',                                                                 // Je gebruikt de POST methode
+  await fetch('https://fdnd.directus.app/items/messages', {      // Je stuurt de message naar deze API
+    method: 'POST',                                              // Je gebruikt de POST methode
     body: JSON.stringify({
-      from: `jules-sprint-12_${request.body.name}`,                           // Ik gebruikt uit database from & text (jules-sprint-12_ zorgt ervoor dat alleen mijn messages gebruikt worden)
-      text: request.body.message                                             // text zorgt ervoor dat in het 'text' veld in database de geposte content komt
+      from: `${request.body.name}`,                             // Ik gebruikt uit database from & text (jules-sprint-12_ zorgt ervoor dat alleen mijn messages gebruikt worden)
+      for: `jules-sprint-12_${role}`,
+      text: request.body.message                                // text zorgt ervoor dat in het 'text' veld in database de geposte content komt
     }),
     headers: {
       'Content-Type': 'application/json',
@@ -88,17 +95,7 @@ app.post('/:role', async function (request, response) {
 })  
 
 
-// GET ROUTE MESSAGES
-app.get('/:role', async function (request, resposnse) {
-  const role = request.params.role
-  const dynamicRole = await fetch(`https://fdnd-fresk-api.netlify.app/get-content-by-role?userRole=${role}`)
-  const dynamicRoleJSON = await dynamicRole.json()
 
-  const messages = await fetch('https://fdnd-agency.directus.app/items/dropandheal_messages?filter={%22from%22:{%22_contains%22:%22jules-sprint-12_%22}}')
-  const messagesJSON = await messages.json()
-
-    response.render('dashboard.liquid', { message: messagesJSON.data })
-})
 
 // SET PORT
 app.set('port', process.env.PORT || 8000)
