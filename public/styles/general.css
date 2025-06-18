@@ -225,21 +225,28 @@ section.dashboard {
 }
 
 section.post {
-    background-color: var(--accent-color-one);
+    background-color: var(--accent-color-two);
     border-radius: var(--border-radius);
     padding: var(--sm);
     margin-top: var(--sm);
 
     h2 {
-        margin-bottom: var(--sm);
         &::after {
             content: "📩";
             margin-left: 1rem;
         }
     }
+    
+    .dialog-btn {
+        margin: 1rem 0;
+    }
 
     article {
-        background-color: var(--accent-color-two);
+        background-color: var(--accent-color-one);
+
+        p {
+            max-width: 70ch;
+        }
     }
 
     dialog {
@@ -247,6 +254,7 @@ section.post {
         background-color: var(--accent-color-two);
         border-radius: var(--border-radius);
         padding: var(--sm);
+        width: 80%;
 
         label {
             display: flex;
@@ -255,6 +263,7 @@ section.post {
             color: var(--background-color);
 
             input, 
+            input,
             textarea {
                 font-family: var(--primary-font);
                 color: var(--background-color);
@@ -262,20 +271,49 @@ section.post {
                 padding: .5rem;
                 border: none;
                 border-radius: var(--border-radius);
+                margin-bottom: 1rem;
             }
+
         }
 
+        .button {
+            margin-top: 1rem;
+        }
+
+        @media (width > 42rem) {
+            width: 60%;
+        }
+
+        @media (width > 60rem) {
+            width: 50%;
+        }
     }
-    .post-btn {
-        font-family: var(--primary-font);
-        background-color: var(--accent-color-two);
-        text-decoration: none;
-        font-size: 1rem;
-        padding: .5rem;
-        border: none;
-        border-radius: var(--border-radius);
+
+    @media (width > 32rem) {
+        .dialog-btn {
+            margin: 0;
+        }
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--sm);
+        }
+    }
+
+    :open {
+        display: block;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    ::backdrop {
+        background-color: var(--background-color);
+        opacity: .5;
     }
 }
+
 
 
 section.perspective {
@@ -289,8 +327,23 @@ section.perspective {
     h2 {
         margin-bottom: var(--sm);
     }
+
     p {
         margin-bottom: var(--xs);
+    }
+}
+
+.flex-messages-perspective {
+    @media (width > 62rem) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        section.post,
+        section.perspective {
+            margin-top: 0;
+            height: min-content;
+        }
     }
 }
 
@@ -307,18 +360,23 @@ footer {
     li:nth-of-type(1)::before {
         content: "🧑‍🔧";
     }
+
     li:nth-of-type(2)::before {
         content: "🤵";
     }
+
     li:nth-of-type(3)::before {
         content: "🧑‍💻";
     }
+
     li:nth-of-type(4)::before {
         content: "👨‍🏫";
     }
+
     li:nth-of-type(5)::before {
         content: "👨‍💼";
     }
+
     li:nth-of-type(6)::before {
         content: "🧑‍💼";
     }
