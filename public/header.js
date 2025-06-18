@@ -22,9 +22,20 @@ function toggleMenu(event) {
 
 
 // DIALOG
-const dialogOpen = document.querySelector('.post-btn')
-const dialog = document.querySelector('form')
+const dialogOpen = document.querySelector('.dialog-btn')
+const dialogClose = document.querySelector('.close-btn')
+let dialog = document.querySelector('dialog')
 
-dialogOpen.addEventListener('click', function(event) {
+
+console.log(dialogOpen)
+console.log(dialog)
+
+dialogOpen.addEventListener('click', () => {
       dialog.showModal();
+    console.log(dialogOpen)
+})
+dialogClose.addEventListener('click', () => {
+      dialog.close();
+    console.log(dialogClose)
+
 })

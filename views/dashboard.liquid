@@ -14,11 +14,6 @@
                         {% render './partials/icons/maintenance.liquid' %}
                          Maintenance schedule
                         </a>
-
-                        <dialog class="dialog">
-                            <div class="dialogContent">Inhoud wordt geladen...</div>
-                            <button class="closeDialogBtn">Sluiten</button>
-                        </dialog>
                     </li>
                     <li>
                         <a href="/mechanic/assigned-repair-jobs">
@@ -180,21 +175,21 @@
     <div class="flex-messages-perspective">
     
     <section class="post">
-        <h2 class="md">{{ roles.displayName | split: " " | first }}'s messages</h2>
+        <h2 class="md">{{ roles.roleName }}'s messages</h2>
 
         {% for message in messages %}
             <article class="drops">
-                <h3>{{ message.from }}</h3>
+                <h3 class="md">{{ message.from }}</h3>
                 <p>{{ message.text }}</p>
-                <p>Op {{ message.created | date: "%-d %B" }}</p>
+                <p>On {{ message.created | date: "%-d %B" }}</p>
             </article> 
         {% else %}
                 <p class="empty-state">Er zijn geen berichten voor {{ roles.displayName | split: " " | first }}, klik op de button om het eerste bericht achter te laten.</p>
         {% endfor %}
         
-        <a href="" class="post-btn">Plaats bericht</a>    
+        <button href="" class="dialog-btn">Plaats bericht</button>    
         
-        <dialog open>
+        <dialog>
             <form method="POST" action="/{{ roles.roleName }}" data-enhanced="form" id="post-form">
                 <label for="">name
                     <input type="text" name="name" required>
@@ -203,6 +198,7 @@
                     <textarea name="message" id="message" rows="4" required></textarea>
                 </label>
                 <button type="submit" class="post-btn">Plaats bericht</button>
+                <button type="reset" class="close-btn">close</button>
             </form>
         </dialog>
     </section>

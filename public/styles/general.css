@@ -229,6 +229,7 @@ section.post {
     border-radius: var(--border-radius);
     padding: var(--sm);
     margin-top: var(--sm);
+
     h2 {
         margin-bottom: var(--sm);
         &::after {
@@ -236,6 +237,11 @@ section.post {
             margin-left: 1rem;
         }
     }
+
+    article {
+        background-color: var(--accent-color-two);
+    }
+
     dialog {
         border: none;
         background-color: var(--accent-color-two);
