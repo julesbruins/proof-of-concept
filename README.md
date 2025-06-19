@@ -92,19 +92,18 @@ Buiten de _hierarchy of user needs_ zijn er nog wat losse kenmerken aan dit proj
 
 
 ### POST formulier, client side fetch + states
-In de dialog op de pagina bevindt zich een POST formulier. Deze POST stuurt een message naar de directus API. 
-<!-- POST + client side fetch + states -->
+De pop-up / dialog op de pagina bevat een POST formulier. Deze POST stuurt een message naar de directus API. Als het formulier gesubmit wordt dan wordt er door middel van de client side fetch een loading state geactiveerd, je ziet een laadicoon. Wanneer dan de message in de HTML geparsed is en zichtbaar is geworden op de pagina, verdwijnt de loading state, sluit de pop-up en wordt er een succes state geactiveerd, je ziet een melding dat het gelukt is. Je ziet dan de nieuwste message bovenaan. 
 
 
-### anchor positioning
+### Anchor positioning
 Voor het menu is er gebruik gemaakt van [anchor positioning](https://github.com/julesbruins/proof-of-concept/blob/ef430b5d9dcd7b76cca73538ac6f9ea4ceabfe47/public/styles/general.css#L58-L59). Dit zodat het uitklap menu zich vast ankert aan het brede menu. 
 
 
-### code conventions
+### Code conventions
 Verder heb ik het hele project door gebruik gemaakt van de volgende code conventions. 
 
 **HTML / Liquid**
-* Gebruik semantische HTML: <section>, <article>, <main>
+* Gebruik semantische HTML: `<section>`, `<article>`, `<main>`
 * kebab-case voor classnamen: section-title
 * Voeg alt-teksten toe aan afbeeldingen (voor toegankelijkheid)
 * Progressive enhancement
@@ -120,10 +119,27 @@ Verder heb ik het hele project door gebruik gemaakt van de volgende code convent
 * Server side structuur volgens sitemap (routes)
 * camelCase voor variabelen/functies: handleSubmit
 
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+
+## Ontwerpkeuzes
+Voor de ontwerpkeuzes, is er zoals gevraagd gebruik gemaakt van AI. Hierbij kwam ik al snel uit op een minimalistisch ontwerp thema met groene accenten en ronde hoeken. Het leek me mooi om de basis van de pagina in de groene kleuren te maken. Hiermee zijn we uitgekomen op het volgende ontwerp en logo. In het ontwerp worden verschillende groene kleurtonen gebruikt. 
+
+
+<img src="https://github.com/user-attachments/assets/7bfc1abe-73a4-4386-9919-497a455bcc64" width="400">
+<img src="https://github.com/user-attachments/assets/af17bfea-e768-46b8-bc62-301e6fd94368" width="400">
+
+<img src="https://github.com/user-attachments/assets/6347a09b-f035-4686-a39b-5514d81494dd" width="400">
+<img src="https://github.com/user-attachments/assets/1b77b355-2517-436e-9fee-08168f2bdf06" width="400">
+
 
 ## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+In dit project wordt gebruik gemaakt van NodeJS. Om aan dit project te werken moet NodeJS geïnstalleerd zijn. Eenmaal geïnstalleerd kan het project geopend worden in de code editor.
+
+Voer in de terminal `npm install` uit om alle afhankelijkheden te installeren.
+
+Voer vervolgens `npm start` uit om de server te starten.
+
+Ga in je browser naar http://localhost:8000 om het project te bekijken.
+
 
 ## Bronnen
 
