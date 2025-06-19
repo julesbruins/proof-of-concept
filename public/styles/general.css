@@ -6,17 +6,18 @@ body {
 .index {
     li {
         background-color: var(--accent-color-one);
-        padding: 1rem;
+        padding: var(--sm);
         border-radius: var(--border-radius);
     }
 }
+
 
 header.nav {
     img {
         width: 100%;
         display: flex;
         justify-self: center;
-        padding: 1rem;
+        padding: var(--sm);
     }
 
     .link-to-menu {
@@ -28,20 +29,18 @@ header.nav {
         position: relative;
     }
 
-    padding-bottom: 1rem;
+    padding-bottom: var(--sm);
 
     @media (width > 42.5rem) {
         img {
             width: 80%;
         }
     }
-
     @media (width > 60rem) {
         img {
             width: 60%;
         }
     }
-
     @media (width > 75rem) {
         img {
             width: 50%;
@@ -49,7 +48,9 @@ header.nav {
     }
 }
 
-/* JS NAVIGATION */
+
+/* MARK: JS NAVIGATION 
+*/
 .js nav {
     position: absolute;
     left: 0;
@@ -57,7 +58,7 @@ header.nav {
     overflow: hidden;
     position-anchor: --menu;
     position-area: bottom span-right;
-    padding: 0 1rem;
+    padding: 0 var(--sm);
     transition: .1s ease;
 
     border-radius: var(--border-radius);
@@ -70,7 +71,7 @@ header.nav {
 
     a {
         padding: .25rem;
-        border-radius: .5rem;
+        border-radius: var(--xs);
 
         &:hover {
             background-color: var(--background-color);
@@ -79,7 +80,7 @@ header.nav {
     }
 
     @media (max-width: 42rem) {
-        border-radius: 1rem 0 1rem 1rem;
+        border-radius: var(--sm) 0 var(--sm) var(--sm);
         box-shadow: var(--box-shadow);
     }
 }
@@ -87,9 +88,9 @@ header.nav {
 .js nav.is-open {
     height: auto;
     top: auto;
-    padding: 1rem;
+    padding: var(--sm);
     margin: 0rem;
-    border-radius: 0rem 0 1rem 1rem;
+    border-radius: 0rem 0 var(--sm) var(--sm);
 
     transition: .3s ease;
 
@@ -98,13 +99,8 @@ header.nav {
     }
 }
 
-.js .footer-nav {
-    display: none;
-
-}
-
 .js .link-to-menu:has(+ .is-open) {
-    border-radius: 1rem 1rem 1rem 0;
+    border-radius: var(--sm) var(--sm) var(--sm) 0;
     box-shadow: var(--box-shadow);
     transition: .3s ease;
 }
@@ -118,7 +114,7 @@ header.nav {
         display: block;
         position: static;
         height: auto;
-        padding: 1rem;
+        padding: var(--sm);
         width: 100%;
         border-radius: var(--border-radius);
 
@@ -137,6 +133,8 @@ header.nav {
 }
 
 
+/* MARK: GREETING
+*/
 section.greeting {
     background-color: var(--accent-color-one);
     border-radius: var(--border-radius);
@@ -156,7 +154,7 @@ section.greeting {
     h1::after {
         content: "👋";
         display: inline-block;
-        margin-left: .5rem;
+        margin-left: var(--xs);
         transform-origin: 70% 70%;
         /* zwaai vanuit “pols” */
         transition: transform 0.3s ease;
@@ -187,6 +185,9 @@ section.greeting {
     }
 }
 
+
+/* MARK: DASHBOARD
+*/
 section.dashboard {
     margin: var(--md) 0 var(--lg) 0;
     padding-top: var(--sm);
@@ -196,11 +197,11 @@ section.dashboard {
     }
 
     ul {
-        margin-top: 1rem;
+        margin-top: var(--sm);
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        gap: 1rem;
+        gap: var(--sm);
 
         li {
             height: 100%;
@@ -235,11 +236,14 @@ section.dashboard {
         @media (width > 64rem) {
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: 1fr;
-            gap: 2rem;
+            gap: var(--md);
         }
     }
 }
 
+
+/* MARK: POST POP-UP
+*/
 section.post {
     background-color: var(--accent-color-two);
     border-radius: var(--border-radius);
@@ -249,12 +253,12 @@ section.post {
     h2 {
         &::after {
             content: "📩";
-            margin-left: 1rem;
+            margin-left: var(--sm);
         }
     }
     
     .dialog-btn {
-        margin: 1rem 0;
+        margin: var(--sm) 0;
     }
 
     article {
@@ -282,37 +286,24 @@ section.post {
             textarea {
                 font-family: var(--primary-font);
                 color: var(--background-color);
-                font-size: 1rem;
-                padding: .5rem;
+                font-size: var(--sm);
+                padding: var(--xs);
                 border: none;
                 border-radius: var(--border-radius);
-                margin-bottom: 1rem;
+                margin-bottom: var(--sm);
             }
 
         }
 
         .button {
-            margin-top: 1rem;
+            margin-top: var(--sm);
         }
 
         @media (width > 42rem) {
             width: 60%;
         }
-
         @media (width > 60rem) {
             width: 50%;
-        }
-    }
-
-    @media (width > 32rem) {
-        .dialog-btn {
-            margin: 0;
-        }
-        .flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--sm);
         }
     }
 
@@ -327,10 +318,25 @@ section.post {
         background-color: var(--background-color);
         opacity: .5;
     }
+
+    @media (width > 32rem) {
+        .dialog-btn {
+            margin: 0;
+        }
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--sm);
+        }
+    }
+
+    
 }
 
 
-
+/* MARK: PERSEPCTIVE
+*/
 section.perspective {
     background-color: var(--accent-color-two);
     border-radius: var(--border-radius);
@@ -352,7 +358,7 @@ section.perspective {
     @media (width > 62rem) {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        gap: var(--md);
 
         section.post,
         section.perspective {
@@ -362,6 +368,9 @@ section.perspective {
     }
 }
 
+
+/* MARK: FOOTER
+*/
 footer {
     border-radius: var(--border-radius);
     margin: var(--sm);
@@ -369,7 +378,6 @@ footer {
     background-color: var(--accent-color-two);
 
 }
-
 
 #nav {
     li:nth-of-type(1)::before {
@@ -395,4 +403,9 @@ footer {
     li:nth-of-type(6)::before {
         content: "🧑‍💼";
     }
+}
+
+.js .footer-nav {
+    display: none;
+
 }
