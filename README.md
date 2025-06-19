@@ -60,16 +60,65 @@ Voorbeelden hiervan zijn de volgende:
 _De pleasurable laag van de hierarchy of user needs zorgt ervoor dat een gebruiker plezier beleeft aan de website._
 
 Voorbeelden hiervan zijn de volgende:
-* `menu` schaduw animatie:
-* `:hover` zwaaiend handje animatie:
-* `:hover` rotate + schaduw animatie:
-* `:hover` button animatie:
+<details>
+ <summary>menu schaduw animatie:</summary>
+
+<video src="https://github.com/user-attachments/assets/180ce750-2d52-4d75-b0a3-147e5b898ea7">
+
+</details> 
+<details>
+ <summary>:hover zwaaiend handje animatie:</summary>
+
+<video src="https://github.com/user-attachments/assets/df1748ad-e615-4a53-a316-5257ceeabb9b">
+
+</details> 
+<details>
+ <summary>:hover rotate + schaduw animatie:</summary>
+
+<video src="https://github.com/user-attachments/assets/7bcdc8e8-fc72-41a1-9a5b-c9aa91da9bc5">
+
+</details> 
+<details>
+ <summary>:hover button animatie:</summary>
+
+<video src="https://github.com/user-attachments/assets/160fd6d0-ed5c-4c06-922c-6dfc1c21514d">
+
+</details> 
 
 
-Buiten de hierarchy of user needs zijn er nog wat losse kenmerken aan dit project. Deze staan hieronder kort per stuk uitgewerkt...
+
+
+Buiten de _hierarchy of user needs_ zijn er nog wat losse kenmerken aan dit project. Deze staan hieronder kort per stuk uitgewerkt:
+
+
+### POST formulier, client side fetch + states
+In de dialog op de pagina bevindt zich een POST formulier. Deze POST stuurt een message naar de directus API. 
 <!-- POST + client side fetch + states -->
-<!-- anchor positioning -->
-<!-- code conventions -->
+
+
+### anchor positioning
+Voor het menu is er gebruik gemaakt van [anchor positioning](https://github.com/julesbruins/proof-of-concept/blob/ef430b5d9dcd7b76cca73538ac6f9ea4ceabfe47/public/styles/general.css#L58-L59). Dit zodat het uitklap menu zich vast ankert aan het brede menu. 
+
+
+### code conventions
+Verder heb ik het hele project door gebruik gemaakt van de volgende code conventions. 
+
+**HTML / Liquid**
+* Gebruik semantische HTML: <section>, <article>, <main>
+* kebab-case voor classnamen: section-title
+* Voeg alt-teksten toe aan afbeeldingen (voor toegankelijkheid)
+* Progressive enhancement
+
+**CSS**
+* kebab-case voor classnamen: .form-field
+* Naamgeving in het engels
+* Schrijf mobile-first met zo mogelijk geneste media queries
+* Gebruik --custom-properties waar mogelijk
+* Houd CSS DRY (vermijd dubbele regels)
+  
+**JavaScript**
+* Server side structuur volgens sitemap (routes)
+* camelCase voor variabelen/functies: handleSubmit
 
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
 
