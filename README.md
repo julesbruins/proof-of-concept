@@ -40,7 +40,7 @@ Tijdens het project is er gewerkt met de techniek _'De hierarchy of user needs'_
 <img src="https://github.com/user-attachments/assets/258443ac-3067-478e-97b9-94b6e26f54f7" width="320">
 
 
-### functional & reliable - progressive enhancement (stap 1 & 2)
+### Functional & reliable - progressive enhancement (stap 1 & 2)
 _Op de pagina zorg je ervoor dat alles doormiddel van HTML en CSS (mobile first) alleen al kan werken. Het komt overeen met de eerste twee lagen van Progressive Enhancement._
 
 Een voorbeeld hiervan is de navigatie. Wanneer een gebruiker Javascript en CSS scroll behaviour uit heeft staan, dan staat het menu onderaan de pagina en wordt je doorgelinkt naar onder als je op _'menu'_ klikt (alleen HTML nodig, stap 1 + 2). Vervolgens als de browser of gebruiker wel scroll behaviour toelaat, dan wordt er smooth naar het menu doorgelinkt. Als de gebruiker ook Javascript accepteert, verandert het hele menu. De navigatie verdwijnt onderaan de pagina, en wordt zichtbaar doormiddel van een uitklapmenu. Bij breder scherm zie je de navigatie ook dan al bovenaan de pagina getoond. Dit toont aan dat de ervaring stap voor stap beter wordt, maar voor iedereen werkend blijft. 
